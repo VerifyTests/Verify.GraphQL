@@ -1,5 +1,3 @@
-using GraphQL.Transport;
-
 public class Tests
 {
     #region ExecutionResultWithData
@@ -15,8 +13,12 @@ public class Tests
                 {
                     "user", new Dictionary<string, object?>
                     {
-                        { "name", "John" },
-                        { "age", 30 }
+                        {
+                            "name", "John"
+                        },
+                        {
+                            "age", 30
+                        }
                     }
                 }
             }
@@ -57,11 +59,15 @@ public class Tests
             Executed = true,
             Data = new Dictionary<string, object?>
             {
-                { "hello", "world" }
+                {
+                    "hello", "world"
+                }
             },
             Extensions = new()
             {
-                { "tracing", "some-trace-data" }
+                {
+                    "tracing", "some-trace-data"
+                }
             }
         };
         return Verify(result);
@@ -85,12 +91,16 @@ public class Tests
             Executed = true,
             Data = new Dictionary<string, object?>
             {
-                { "hello", "world" }
+                {
+                    "hello", "world"
+                }
             },
             Errors = [error],
             Extensions = new()
             {
-                { "tracing", "some-trace-data" }
+                {
+                    "tracing", "some-trace-data"
+                }
             }
         };
         return Verify(result);
@@ -108,7 +118,9 @@ public class Tests
             Executed = false,
             Data = new Dictionary<string, object?>
             {
-                { "hello", "world" }
+                {
+                    "hello", "world"
+                }
             }
         };
         return Verify(result);
@@ -125,13 +137,17 @@ public class Tests
         {
             Query = "{ hero { name } }",
             OperationName = "HeroQuery",
-            Variables = new Inputs(new Dictionary<string, object?>
+            Variables = new(new Dictionary<string, object?>
             {
-                { "id", "1" }
+                {
+                    "id", "1"
+                }
             }),
-            Extensions = new Inputs(new Dictionary<string, object?>
+            Extensions = new(new Dictionary<string, object?>
             {
-                { "tracing", true }
+                {
+                    "tracing", true
+                }
             })
         };
         return Verify(request);
@@ -164,7 +180,9 @@ public class Tests
             Id = "1",
             Payload = new Dictionary<string, object?>
             {
-                { "query", "{ hero { name } }" }
+                {
+                    "query", "{ hero { name } }"
+                }
             }
         };
         return Verify(message);
@@ -183,6 +201,14 @@ public class Tests
         };
         return Verify(message);
     }
+
+    #endregion
+
+    #region Location
+
+    [Fact]
+    public Task Location() =>
+        Verify(new GraphQLParser.Location(1, 5));
 
     #endregion
 }

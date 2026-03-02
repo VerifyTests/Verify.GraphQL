@@ -7,7 +7,8 @@ public static class VerifyGraphQL
         new ExecutionResultConverter(),
         new ExecutionErrorConverter(),
         new GraphQLRequestConverter(),
-        new OperationMessageConverter()
+        new OperationMessageConverter(),
+        new LocationConverter()
     ];
 
     public static bool Initialized { get; private set; }

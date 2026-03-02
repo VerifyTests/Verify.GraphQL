@@ -8,6 +8,5 @@
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
     <PackageReference Include="Polyfill" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Sbom.Targets" PrivateAssets="all" Condition="'$(CI)' == 'true'" />
-    <Using Include="System.Diagnostics.CodeAnalysis" />
   </ItemGroup>
 </Project>

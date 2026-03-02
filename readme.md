@@ -42,8 +42,12 @@ public Task ExecutionResultWithData()
             {
                 "user", new Dictionary<string, object?>
                 {
-                    { "name", "John" },
-                    { "age", 30 }
+                    {
+                        "name", "John"
+                    },
+                    {
+                        "age", 30
+                    }
                 }
             }
         }
@@ -51,7 +55,7 @@ public Task ExecutionResultWithData()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L5-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithData' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L3-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithData' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -94,7 +98,7 @@ public Task ExecutionResultWithErrors()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L29-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithErrors' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L31-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithErrors' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -137,17 +141,21 @@ public Task ExecutionResultWithExtensions()
         Executed = true,
         Data = new Dictionary<string, object?>
         {
-            { "hello", "world" }
+            {
+                "hello", "world"
+            }
         },
         Extensions = new()
         {
-            { "tracing", "some-trace-data" }
+            {
+                "tracing", "some-trace-data"
+            }
         }
     };
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L50-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithExtensions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L52-L76' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithExtensions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -187,18 +195,22 @@ public Task ExecutionResultFull()
         Executed = true,
         Data = new Dictionary<string, object?>
         {
-            { "hello", "world" }
+            {
+                "hello", "world"
+            }
         },
         Errors = [error],
         Extensions = new()
         {
-            { "tracing", "some-trace-data" }
+            {
+                "tracing", "some-trace-data"
+            }
         }
     };
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L72-L99' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultFull' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L78-L109' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultFull' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -247,13 +259,15 @@ public Task ExecutionResultNotExecuted()
         Executed = false,
         Data = new Dictionary<string, object?>
         {
-            { "hello", "world" }
+            {
+                "hello", "world"
+            }
         }
     };
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L101-L117' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultNotExecuted' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L111-L129' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultNotExecuted' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -279,19 +293,23 @@ public Task GraphQLRequest()
     {
         Query = "{ hero { name } }",
         OperationName = "HeroQuery",
-        Variables = new Inputs(new Dictionary<string, object?>
+        Variables = new(new Dictionary<string, object?>
         {
-            { "id", "1" }
+            {
+                "id", "1"
+            }
         }),
-        Extensions = new Inputs(new Dictionary<string, object?>
+        Extensions = new(new Dictionary<string, object?>
         {
-            { "tracing", true }
+            {
+                "tracing", true
+            }
         })
     };
     return Verify(request);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L119-L140' title='Snippet source file'>snippet source</a> | <a href='#snippet-GraphQLRequest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L131-L156' title='Snippet source file'>snippet source</a> | <a href='#snippet-GraphQLRequest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -328,13 +346,15 @@ public Task OperationMessage()
         Id = "1",
         Payload = new Dictionary<string, object?>
         {
-            { "query", "{ hero { name } }" }
+            {
+                "query", "{ hero { name } }"
+            }
         }
     };
     return Verify(message);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L156-L173' title='Snippet source file'>snippet source</a> | <a href='#snippet-OperationMessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L172-L191' title='Snippet source file'>snippet source</a> | <a href='#snippet-OperationMessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:

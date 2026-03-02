@@ -7,4 +7,8 @@ public static class ModuleInitializer
         VerifyGraphQL.Initialize();
 
     #endregion
+
+    [ModuleInitializer]
+    public static void InitializeOther() =>
+        VerifierSettings.InitializePlugins();
 }

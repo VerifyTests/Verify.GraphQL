@@ -13,17 +13,7 @@ class ExecutionErrorConverter :
             var locationsList = locations.ToList();
             if (locationsList.Count > 0)
             {
-                writer.WritePropertyName("Locations");
-                writer.WriteStartArray();
-                foreach (var location in locationsList)
-                {
-                    writer.WriteStartObject();
-                    writer.WriteMember(location, location.Line, "Line");
-                    writer.WriteMember(location, location.Column, "Column");
-                    writer.WriteEndObject();
-                }
-
-                writer.WriteEndArray();
+                writer.WriteMember(value, locationsList, "Locations");
             }
         }
 

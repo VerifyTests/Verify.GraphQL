@@ -1,5 +1,3 @@
-using GraphQLParser;
-
 class LocationConverter :
     WriteOnlyJsonConverter<Location>
 {

@@ -1,5 +1,3 @@
-using GraphQL.Transport;
-
 class GraphQLRequestConverter :
     WriteOnlyJsonConverter<GraphQLRequest>
 {

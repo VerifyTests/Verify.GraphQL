@@ -16,6 +16,11 @@ class ResultConverter :
             var data = value.Data;
             if (data != null)
             {
+                if (data is ExecutionNode node)
+                {
+                    data = node.ToValue();
+                }
+
                 writer.WriteMember(value, data, "Data");
             }
         }

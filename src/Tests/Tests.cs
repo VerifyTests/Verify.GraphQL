@@ -206,6 +206,40 @@ public class Tests
 
     #endregion
 
+    [Test]
+    public async Task ExecutionResultFromExecution()
+    {
+        var schema = new Schema
+        {
+            Query = new TestQuery()
+        };
+        var result = await new DocumentExecuter()
+            .ExecuteAsync(_ =>
+            {
+                _.Schema = schema;
+                _.Query = "{ hero { name age } }";
+            });
+        await Verify(result);
+    }
+
+    class TestQuery : ObjectGraphType
+    {
+        public TestQuery() =>
+            Field<TestHeroType>("hero")
+                .Resolve(_ => new TestHero("Luke", 30));
+    }
+
+    record TestHero(string Name, int Age);
+
+    class TestHeroType : ObjectGraphType<TestHero>
+    {
+        public TestHeroType()
+        {
+            Field(_ => _.Name);
+            Field(_ => _.Age);
+        }
+    }
+
     #region Location
 
     [Test]

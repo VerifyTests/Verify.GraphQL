@@ -1,0 +1,8 @@
+{
+  Data: {
+    hero: {
+      age: 30,
+      name: Luke
+    }
+  }
+}

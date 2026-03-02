@@ -31,7 +31,7 @@ public static void Initialize() =>
 <!-- snippet: ExecutionResultWithData -->
 <a id='snippet-ExecutionResultWithData'></a>
 ```cs
-[Fact]
+[Test]
 public Task ExecutionResultWithData()
 {
     var result = new ExecutionResult
@@ -81,7 +81,7 @@ Result:
 <!-- snippet: ExecutionResultWithErrors -->
 <a id='snippet-ExecutionResultWithErrors'></a>
 ```cs
-[Fact]
+[Test]
 public Task ExecutionResultWithErrors()
 {
     var error = new ExecutionError("Some error")
@@ -133,7 +133,7 @@ Result:
 <!-- snippet: ExecutionResultWithExtensions -->
 <a id='snippet-ExecutionResultWithExtensions'></a>
 ```cs
-[Fact]
+[Test]
 public Task ExecutionResultWithExtensions()
 {
     var result = new ExecutionResult
@@ -181,7 +181,7 @@ Result:
 <!-- snippet: ExecutionResultFull -->
 <a id='snippet-ExecutionResultFull'></a>
 ```cs
-[Fact]
+[Test]
 public Task ExecutionResultFull()
 {
     var error = new ExecutionError("Some error")
@@ -251,7 +251,7 @@ Result:
 <!-- snippet: ExecutionResultNotExecuted -->
 <a id='snippet-ExecutionResultNotExecuted'></a>
 ```cs
-[Fact]
+[Test]
 public Task ExecutionResultNotExecuted()
 {
     var result = new ExecutionResult
@@ -286,30 +286,32 @@ Result:
 <!-- snippet: GraphQLRequest -->
 <a id='snippet-GraphQLRequest'></a>
 ```cs
-[Fact]
+[Test]
 public Task GraphQLRequest()
 {
     var request = new GraphQLRequest
     {
         Query = "{ hero { name } }",
         OperationName = "HeroQuery",
-        Variables = new(new Dictionary<string, object?>
-        {
+        Variables = new(
+            new Dictionary<string, object?>
             {
-                "id", "1"
-            }
-        }),
-        Extensions = new(new Dictionary<string, object?>
-        {
+                {
+                    "id", "1"
+                }
+            }),
+        Extensions = new(
+            new Dictionary<string, object?>
             {
-                "tracing", true
-            }
-        })
+                {
+                    "tracing", true
+                }
+            })
     };
     return Verify(request);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L131-L156' title='Snippet source file'>snippet source</a> | <a href='#snippet-GraphQLRequest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L131-L158' title='Snippet source file'>snippet source</a> | <a href='#snippet-GraphQLRequest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -337,7 +339,7 @@ Result:
 <!-- snippet: OperationMessage -->
 <a id='snippet-OperationMessage'></a>
 ```cs
-[Fact]
+[Test]
 public Task OperationMessage()
 {
     var message = new OperationMessage
@@ -354,7 +356,7 @@ public Task OperationMessage()
     return Verify(message);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L172-L191' title='Snippet source file'>snippet source</a> | <a href='#snippet-OperationMessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L174-L193' title='Snippet source file'>snippet source</a> | <a href='#snippet-OperationMessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:

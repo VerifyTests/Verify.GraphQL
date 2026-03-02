@@ -1,4 +1,4 @@
-class OperationMessageConverter :
+class MessageConverter :
     WriteOnlyJsonConverter<OperationMessage>
 {
     public override void Write(VerifyJsonWriter writer, OperationMessage value)

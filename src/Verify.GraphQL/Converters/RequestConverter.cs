@@ -1,4 +1,4 @@
-class GraphQLRequestConverter :
+class RequestConverter :
     WriteOnlyJsonConverter<GraphQLRequest>
 {
     public override void Write(VerifyJsonWriter writer, GraphQLRequest value)

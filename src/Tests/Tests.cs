@@ -2,7 +2,7 @@ public class Tests
 {
     #region ExecutionResultWithData
 
-    [Fact]
+    [Test]
     public Task ExecutionResultWithData()
     {
         var result = new ExecutionResult
@@ -30,7 +30,7 @@ public class Tests
 
     #region ExecutionResultWithErrors
 
-    [Fact]
+    [Test]
     public Task ExecutionResultWithErrors()
     {
         var error = new ExecutionError("Some error")
@@ -51,7 +51,7 @@ public class Tests
 
     #region ExecutionResultWithExtensions
 
-    [Fact]
+    [Test]
     public Task ExecutionResultWithExtensions()
     {
         var result = new ExecutionResult
@@ -77,7 +77,7 @@ public class Tests
 
     #region ExecutionResultFull
 
-    [Fact]
+    [Test]
     public Task ExecutionResultFull()
     {
         var error = new ExecutionError("Some error")
@@ -110,7 +110,7 @@ public class Tests
 
     #region ExecutionResultNotExecuted
 
-    [Fact]
+    [Test]
     public Task ExecutionResultNotExecuted()
     {
         var result = new ExecutionResult
@@ -130,25 +130,27 @@ public class Tests
 
     #region GraphQLRequest
 
-    [Fact]
+    [Test]
     public Task GraphQLRequest()
     {
         var request = new GraphQLRequest
         {
             Query = "{ hero { name } }",
             OperationName = "HeroQuery",
-            Variables = new(new Dictionary<string, object?>
-            {
+            Variables = new(
+                new Dictionary<string, object?>
                 {
-                    "id", "1"
-                }
-            }),
-            Extensions = new(new Dictionary<string, object?>
-            {
+                    {
+                        "id", "1"
+                    }
+                }),
+            Extensions = new(
+                new Dictionary<string, object?>
                 {
-                    "tracing", true
-                }
-            })
+                    {
+                        "tracing", true
+                    }
+                })
         };
         return Verify(request);
     }
@@ -157,7 +159,7 @@ public class Tests
 
     #region GraphQLRequestMinimal
 
-    [Fact]
+    [Test]
     public Task GraphQLRequestMinimal()
     {
         var request = new GraphQLRequest
@@ -171,7 +173,7 @@ public class Tests
 
     #region OperationMessage
 
-    [Fact]
+    [Test]
     public Task OperationMessage()
     {
         var message = new OperationMessage
@@ -192,7 +194,7 @@ public class Tests
 
     #region OperationMessageMinimal
 
-    [Fact]
+    [Test]
     public Task OperationMessageMinimal()
     {
         var message = new OperationMessage
@@ -206,7 +208,7 @@ public class Tests
 
     #region Location
 
-    [Fact]
+    [Test]
     public Task Location() =>
         Verify(new GraphQLParser.Location(1, 5));
 

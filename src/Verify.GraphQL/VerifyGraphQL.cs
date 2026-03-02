@@ -4,10 +4,10 @@ public static class VerifyGraphQL
 {
     static List<JsonConverter> converters =
     [
-        new ExecutionResultConverter(),
-        new ExecutionErrorConverter(),
-        new GraphQLRequestConverter(),
-        new OperationMessageConverter(),
+        new ResultConverter(),
+        new ErrorConverter(),
+        new RequestConverter(),
+        new MessageConverter(),
         new LocationConverter()
     ];
 

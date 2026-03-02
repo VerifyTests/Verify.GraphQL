@@ -1,4 +1,4 @@
-class ExecutionResultConverter :
+class ResultConverter :
     WriteOnlyJsonConverter<ExecutionResult>
 {
     public override void Write(VerifyJsonWriter writer, ExecutionResult value)

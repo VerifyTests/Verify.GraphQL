@@ -1,4 +1,4 @@
-class ExecutionErrorConverter :
+class ErrorConverter :
     WriteOnlyJsonConverter<ExecutionError>
 {
     public override void Write(VerifyJsonWriter writer, ExecutionError value)

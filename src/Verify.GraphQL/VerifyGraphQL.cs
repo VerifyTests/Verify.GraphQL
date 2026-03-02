@@ -8,7 +8,8 @@ public static class VerifyGraphQL
         new ErrorConverter(),
         new RequestConverter(),
         new MessageConverter(),
-        new LocationConverter()
+        new LocationConverter(),
+        new ExecutionNodeConverter()
     ];
 
     public static bool Initialized { get; private set; }

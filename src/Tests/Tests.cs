@@ -1,3 +1,6 @@
+using GraphQL.Execution;
+using GraphQL.Types;
+
 public class Tests
 {
     #region ExecutionResultWithData
@@ -245,6 +248,100 @@ public class Tests
     [Test]
     public Task Location() =>
         Verify(new GraphQLParser.Location(1, 5));
+
+    #endregion
+
+    #region ObjectNode
+
+    [Test]
+    public Task ObjectNode()
+    {
+        var root = new RootExecutionNode(new ObjectGraphType(), null);
+        var nameField = new FieldType { Name = "name" };
+        var ageField = new FieldType { Name = "age" };
+        root.SubFields =
+        [
+            new ValueExecutionNode(
+                root, new StringGraphType(), null!, nameField, null)
+            {
+                Result = "Luke"
+            },
+            new ValueExecutionNode(
+                root, new IntGraphType(), null!, ageField, null)
+            {
+                Result = 30
+            }
+        ];
+        return Verify(root);
+    }
+
+    #endregion
+
+    #region ArrayNode
+
+    [Test]
+    public Task ArrayNode()
+    {
+        var listType = new ListGraphType(new StringGraphType());
+        var root = new RootExecutionNode(new ObjectGraphType(), null);
+        var field = new FieldType
+        {
+            Name = "items",
+            ResolvedType = listType
+        };
+        var node = new ArrayExecutionNode(
+            root, listType, null!, field, null);
+        node.Items =
+        [
+            new ValueExecutionNode(
+                node, new StringGraphType(), null!, field, 0)
+            {
+                Result = "one"
+            },
+            new ValueExecutionNode(
+                node, new StringGraphType(), null!, field, 1)
+            {
+                Result = "two"
+            },
+            new ValueExecutionNode(
+                node, new StringGraphType(), null!, field, 2)
+            {
+                Result = "three"
+            }
+        ];
+        return Verify(node);
+    }
+
+    #endregion
+
+    #region ValueNode
+
+    [Test]
+    public Task ValueNode()
+    {
+        var root = new RootExecutionNode(new ObjectGraphType(), null);
+        var field = new FieldType { Name = "name" };
+        var node = new ValueExecutionNode(
+            root, new StringGraphType(), null!, field, null)
+        {
+            Result = "hello"
+        };
+        return Verify(node);
+    }
+
+    #endregion
+
+    #region NullNode
+
+    [Test]
+    public Task NullNode()
+    {
+        var root = new RootExecutionNode(new ObjectGraphType(), null);
+        var field = new FieldType { Name = "value" };
+        var node = new NullExecutionNode(
+            root, new StringGraphType(), null!, field, null);
+        return Verify(node);
+    }
 
     #endregion
 }

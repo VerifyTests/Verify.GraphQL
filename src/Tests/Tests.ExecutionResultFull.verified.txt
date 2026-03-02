@@ -1,0 +1,23 @@
+﻿{
+  Errors: [
+    {
+      Message: Some error,
+      Locations: [
+        {
+          Line: 1,
+          Column: 5
+        }
+      ],
+      Path: [
+        query,
+        user
+      ]
+    }
+  ],
+  Data: {
+    hello: world
+  },
+  Extensions: {
+    tracing: some-trace-data
+  }
+}

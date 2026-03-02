@@ -1,0 +1,8 @@
+﻿{
+  Data: {
+    hello: world
+  },
+  Extensions: {
+    tracing: some-trace-data
+  }
+}

@@ -1,6 +1,3 @@
-using GraphQL.Execution;
-using GraphQL.Types;
-
 public class Tests
 {
     #region ExecutionResultWithData
@@ -257,8 +254,14 @@ public class Tests
     public Task ObjectNode()
     {
         var root = new RootExecutionNode(new ObjectGraphType(), null);
-        var nameField = new FieldType { Name = "name" };
-        var ageField = new FieldType { Name = "age" };
+        var nameField = new FieldType
+        {
+            Name = "name"
+        };
+        var ageField = new FieldType
+        {
+            Name = "age"
+        };
         root.SubFields =
         [
             new ValueExecutionNode(
@@ -320,7 +323,10 @@ public class Tests
     public Task ValueNode()
     {
         var root = new RootExecutionNode(new ObjectGraphType(), null);
-        var field = new FieldType { Name = "name" };
+        var field = new FieldType
+        {
+            Name = "name"
+        };
         var node = new ValueExecutionNode(
             root, new StringGraphType(), null!, field, null)
         {
@@ -337,7 +343,10 @@ public class Tests
     public Task NullNode()
     {
         var root = new RootExecutionNode(new ObjectGraphType(), null);
-        var field = new FieldType { Name = "value" };
+        var field = new FieldType
+        {
+            Name = "value"
+        };
         var node = new NullExecutionNode(
             root, new StringGraphType(), null!, field, null);
         return Verify(node);

@@ -9,7 +9,10 @@ public static class VerifyGraphQL
         new RequestConverter(),
         new MessageConverter(),
         new LocationConverter(),
-        new ExecutionNodeConverter()
+        new NullNodeConverter(),
+        new ValueNodeConverter(),
+        new ObjectNodeConverter(),
+        new ArrayNodeConverter()
     ];
 
     public static bool Initialized { get; private set; }

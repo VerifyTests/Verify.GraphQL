@@ -55,7 +55,7 @@ public Task ExecutionResultWithData()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L6-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithData' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L3-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithData' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -98,7 +98,7 @@ public Task ExecutionResultWithErrors()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L34-L53' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithErrors' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L31-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithErrors' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -155,7 +155,7 @@ public Task ExecutionResultWithExtensions()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L55-L79' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithExtensions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L52-L76' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithExtensions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -210,7 +210,7 @@ public Task ExecutionResultFull()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L81-L112' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultFull' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L78-L109' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultFull' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -267,7 +267,7 @@ public Task ExecutionResultNotExecuted()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L114-L132' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultNotExecuted' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L111-L129' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultNotExecuted' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -311,7 +311,7 @@ public Task GraphQLRequest()
     return Verify(request);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L134-L161' title='Snippet source file'>snippet source</a> | <a href='#snippet-GraphQLRequest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L131-L158' title='Snippet source file'>snippet source</a> | <a href='#snippet-GraphQLRequest' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -356,7 +356,7 @@ public Task OperationMessage()
     return Verify(message);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L177-L196' title='Snippet source file'>snippet source</a> | <a href='#snippet-OperationMessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L174-L193' title='Snippet source file'>snippet source</a> | <a href='#snippet-OperationMessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:

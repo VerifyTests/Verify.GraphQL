@@ -1,0 +1,7 @@
+﻿{
+  Type: connection_init,
+  Id: 1,
+  Payload: {
+    query: { hero { name } }
+  }
+}

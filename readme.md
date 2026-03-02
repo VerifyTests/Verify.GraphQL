@@ -51,7 +51,7 @@ public Task ExecutionResultWithData()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L3-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithData' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L5-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithData' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -94,7 +94,7 @@ public Task ExecutionResultWithErrors()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L27-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithErrors' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L29-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithErrors' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -147,7 +147,7 @@ public Task ExecutionResultWithExtensions()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L48-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithExtensions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L50-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultWithExtensions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -198,7 +198,7 @@ public Task ExecutionResultFull()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L70-L97' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultFull' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L72-L99' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultFull' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -253,7 +253,7 @@ public Task ExecutionResultNotExecuted()
     return Verify(result);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L99-L115' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultNotExecuted' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L101-L117' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExecutionResultNotExecuted' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Result:
@@ -264,4 +264,91 @@ Result:
 {}
 ```
 <sup><a href='/src/Tests/Tests.ExecutionResultNotExecuted.verified.txt#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.ExecutionResultNotExecuted.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
+### GraphQL request
+
+<!-- snippet: GraphQLRequest -->
+<a id='snippet-GraphQLRequest'></a>
+```cs
+[Fact]
+public Task GraphQLRequest()
+{
+    var request = new GraphQLRequest
+    {
+        Query = "{ hero { name } }",
+        OperationName = "HeroQuery",
+        Variables = new Inputs(new Dictionary<string, object?>
+        {
+            { "id", "1" }
+        }),
+        Extensions = new Inputs(new Dictionary<string, object?>
+        {
+            { "tracing", true }
+        })
+    };
+    return Verify(request);
+}
+```
+<sup><a href='/src/Tests/Tests.cs#L119-L140' title='Snippet source file'>snippet source</a> | <a href='#snippet-GraphQLRequest' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Result:
+
+<!-- snippet: Tests.GraphQLRequest.verified.txt -->
+<a id='snippet-Tests.GraphQLRequest.verified.txt'></a>
+```txt
+{
+  Query: { hero { name } },
+  OperationName: HeroQuery,
+  Variables: {
+    id: 1
+  },
+  Extensions: {
+    tracing: true
+  }
+}
+```
+<sup><a href='/src/Tests/Tests.GraphQLRequest.verified.txt#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.GraphQLRequest.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
+### Operation message
+
+<!-- snippet: OperationMessage -->
+<a id='snippet-OperationMessage'></a>
+```cs
+[Fact]
+public Task OperationMessage()
+{
+    var message = new OperationMessage
+    {
+        Type = "connection_init",
+        Id = "1",
+        Payload = new Dictionary<string, object?>
+        {
+            { "query", "{ hero { name } }" }
+        }
+    };
+    return Verify(message);
+}
+```
+<sup><a href='/src/Tests/Tests.cs#L156-L173' title='Snippet source file'>snippet source</a> | <a href='#snippet-OperationMessage' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Result:
+
+<!-- snippet: Tests.OperationMessage.verified.txt -->
+<a id='snippet-Tests.OperationMessage.verified.txt'></a>
+```txt
+{
+  Type: connection_init,
+  Id: 1,
+  Payload: {
+    query: { hero { name } }
+  }
+}
+```
+<sup><a href='/src/Tests/Tests.OperationMessage.verified.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.OperationMessage.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

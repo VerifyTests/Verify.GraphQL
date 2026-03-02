@@ -5,7 +5,9 @@ public static class VerifyGraphQL
     static List<JsonConverter> converters =
     [
         new ExecutionResultConverter(),
-        new ExecutionErrorConverter()
+        new ExecutionErrorConverter(),
+        new GraphQLRequestConverter(),
+        new OperationMessageConverter()
     ];
 
     public static bool Initialized { get; private set; }

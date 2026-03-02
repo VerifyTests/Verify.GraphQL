@@ -1,3 +1,5 @@
+using GraphQL.Transport;
+
 public class Tests
 {
     #region ExecutionResultWithData
@@ -110,6 +112,76 @@ public class Tests
             }
         };
         return Verify(result);
+    }
+
+    #endregion
+
+    #region GraphQLRequest
+
+    [Fact]
+    public Task GraphQLRequest()
+    {
+        var request = new GraphQLRequest
+        {
+            Query = "{ hero { name } }",
+            OperationName = "HeroQuery",
+            Variables = new Inputs(new Dictionary<string, object?>
+            {
+                { "id", "1" }
+            }),
+            Extensions = new Inputs(new Dictionary<string, object?>
+            {
+                { "tracing", true }
+            })
+        };
+        return Verify(request);
+    }
+
+    #endregion
+
+    #region GraphQLRequestMinimal
+
+    [Fact]
+    public Task GraphQLRequestMinimal()
+    {
+        var request = new GraphQLRequest
+        {
+            Query = "{ hero { name } }"
+        };
+        return Verify(request);
+    }
+
+    #endregion
+
+    #region OperationMessage
+
+    [Fact]
+    public Task OperationMessage()
+    {
+        var message = new OperationMessage
+        {
+            Type = "connection_init",
+            Id = "1",
+            Payload = new Dictionary<string, object?>
+            {
+                { "query", "{ hero { name } }" }
+            }
+        };
+        return Verify(message);
+    }
+
+    #endregion
+
+    #region OperationMessageMinimal
+
+    [Fact]
+    public Task OperationMessageMinimal()
+    {
+        var message = new OperationMessage
+        {
+            Type = "connection_init"
+        };
+        return Verify(message);
     }
 
     #endregion

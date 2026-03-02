@@ -1,0 +1,10 @@
+﻿{
+  Query: { hero { name } },
+  OperationName: HeroQuery,
+  Variables: {
+    id: 1
+  },
+  Extensions: {
+    tracing: true
+  }
+}

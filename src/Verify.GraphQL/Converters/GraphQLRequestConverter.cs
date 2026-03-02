@@ -5,30 +5,11 @@ class GraphQLRequestConverter :
     {
         writer.WriteStartObject();
 
-        if (value.Query != null)
-        {
-            writer.WriteMember(value, value.Query, "Query");
-        }
-
-        if (value.OperationName != null)
-        {
-            writer.WriteMember(value, value.OperationName, "OperationName");
-        }
-
-        if (value.Variables != null)
-        {
-            writer.WriteMember(value, value.Variables, "Variables");
-        }
-
-        if (value.Extensions != null)
-        {
-            writer.WriteMember(value, value.Extensions, "Extensions");
-        }
-
-        if (value.DocumentId != null)
-        {
-            writer.WriteMember(value, value.DocumentId, "DocumentId");
-        }
+        writer.WriteMember(value, value.Query, "Query");
+        writer.WriteMember(value, value.OperationName, "OperationName");
+        writer.WriteMember(value, value.Variables, "Variables");
+        writer.WriteMember(value, value.Extensions, "Extensions");
+        writer.WriteMember(value, value.DocumentId, "DocumentId");
 
         writer.WriteEndObject();
     }

@@ -7,11 +7,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MarkdownSnippets.MsBuild" PrivateAssets="all" />
-    <PackageReference Include="Verify.TUnit" VersionOverride="33.0.0-beta.8" />
+    <PackageReference Include="Verify.TUnit" VersionOverride="33.0.0-beta.11" />
     <PackageReference Include="Argon" />
     <PackageReference Include="DiffEngine" />
     <PackageReference Include="EmptyFiles" />
-    <PackageReference Include="Verify" VersionOverride="33.0.0-beta.8" />
+    <PackageReference Include="Verify" VersionOverride="33.0.0-beta.11" />
     <PackageReference Include="Verify.DiffPlex" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
     <ProjectReference Include="..\Verify.GraphQL\Verify.GraphQL.csproj" />

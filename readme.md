@@ -1,6 +1,7 @@
 # Verify.GraphQL
 
 [![Discussions](https://img.shields.io/badge/Verify-Discussions-yellow?svg=true&label=)](https://github.com/orgs/VerifyTests/discussions)
+[![Build status](https://github.com/VerifyTests/Verify.GraphQL/actions/workflows/build.yml/badge.svg)](https://github.com/VerifyTests/Verify.GraphQL/actions/workflows/build.yml)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.GraphQL.svg)](https://www.nuget.org/packages/Verify.GraphQL/)
 
 Adds [Verify](https://github.com/VerifyTests/Verify) support to verify GraphQL.<!-- singleLineInclude: intro. path: /docs/intro.include.md -->
